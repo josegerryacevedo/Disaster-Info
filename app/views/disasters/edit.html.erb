@@ -1,0 +1,14 @@
+
+<h1>Edit Post id: <%= @disaster.id %></h1>
+
+<%= form_for @disaster, url: disaster_path(@disaster), method: :patch do |f| %>
+  <%= f.label :Title %>
+  <%= f.text_field :title %>
+  <%= f.label :Content %>
+  <%= f.text_field :content %>
+  <%= f.label :Address %>
+  <%= f.text_field :address %>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to 'Back', disasters_path %>
