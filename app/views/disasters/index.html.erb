@@ -7,6 +7,7 @@
       <li><%=disaster.address%></li>
       <li><%= link_to 'Edit', edit_disaster_path(disaster) %></li>
       <li><%= link_to "Show", disaster_path(disaster) %></li>
+      <li><%= link_to "Comment", disaster_comments_path(disaster) %></li>
       <%= form_for disaster, url: disaster_path(disaster), method: :delete do |f| %>
         <%= f.submit 'delete' %>
       <% end %>
