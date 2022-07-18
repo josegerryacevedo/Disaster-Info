@@ -1,1 +1,12 @@
-<h1>Hi</h1>
+<h1> List</h1>
+  <% @disasters.each do |disaster| %>
+    <ul>
+      <li><%=disaster.user.email%></li>
+      <li><%=disaster.title%></li>
+      <li><%=disaster.content%></li>
+      <li><%=disaster.address%></li>
+    </ul>
+  <% end %>
+
+<%= link_to 'Create', new_disaster_path %>
+<h3><%= link_to "LOGOUT", destroy_user_session_path, :method => :delete %></h3>
