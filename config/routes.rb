@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root :to => "disasters#index"
-  resources :disasters, only: [:index, :new, :create]
+  get '/disasters' => 'disasters#index'
+  resources :disasters, only: [:index, :new, :create, :edit, :update, :show, :destroy]
 
 end
