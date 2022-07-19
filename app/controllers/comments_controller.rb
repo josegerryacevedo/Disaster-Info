@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment.disaster = @disaster
     @comment.user = current_user
     if @comment.save
-      redirect_to disaster_comments_path(@disaster)
+      redirect_to disaster_comments_path(@disaster), notice: 'Successfully Submitted'
     else
       render :new
     end

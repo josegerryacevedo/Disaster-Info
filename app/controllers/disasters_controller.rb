@@ -15,7 +15,7 @@ class DisastersController < ApplicationController
     @disaster = Disaster.new(disaster_params)
     @disaster.user = current_user
     if @disaster.save
-      redirect_to disasters_path
+      redirect_to disasters_path, notice: 'Post was successfully submitted'
     else
       render :new
     end
