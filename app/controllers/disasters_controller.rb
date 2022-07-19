@@ -1,5 +1,5 @@
 class DisastersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   before_action :set_disaster, only: :show
   before_action :set_own_disaster, only: [:edit, :update, :destroy]
 
