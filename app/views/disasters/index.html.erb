@@ -14,9 +14,8 @@
     </ul>
   <% end %>
 
-<%= link_to 'Create', new_disaster_path %>
-
 <%if current_user%>
+  <%= link_to 'Create', new_disaster_path %>
   <h3><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></h3>
 <% else %>
   <h3><%= link_to 'Sign in', new_user_session_path %></h3>
