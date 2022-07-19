@@ -6,4 +6,13 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :disasters
+
+  def client?
+    role == 'client'
+  end
+
+  def admin?
+    role == 'admin'
+  end
+
 end
