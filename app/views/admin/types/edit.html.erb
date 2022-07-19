@@ -1,0 +1,9 @@
+<h1>Edit Post id: <%= @type.id %></h1>
+
+<%= form_for @type, url: admin_type_path(@type), method: :patch do |f| %>
+  <%= f.label :Type_of_disaster%>
+  <%= f.text_area :category %>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to 'Back', admin_types_path %>

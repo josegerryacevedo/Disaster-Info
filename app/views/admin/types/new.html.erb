@@ -1,0 +1,14 @@
+
+<h1>Type of Disaster</h1>
+  <% if @type.errors.any? %>
+    <% @type.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+  <%= form_for @type, url: admin_types_path(@type), method: :post do |f| %>
+    <%= f.label :Category %>
+    <%= f.text_area :category %>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to 'back', admin_types_path %>
+
