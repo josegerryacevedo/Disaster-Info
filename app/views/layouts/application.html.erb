@@ -13,9 +13,8 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= link_to 'Admin', admin_disaster_types_path if current_user&.admin? %>
+    <%= link_to 'Admin', admin_types_path if current_user&.admin? %>
     <%= yield %>
-
 
   </body>
 </html>
