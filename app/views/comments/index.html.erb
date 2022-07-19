@@ -1,1 +1,24 @@
-<h1>HEllo</h1>
+<h1>COMMENTS</h1>
+
+<h1><%= @disaster.id %></h1>
+<ul>
+  <li><%= @disaster.title %></li>
+  <li><%= @disaster.content %></li>
+</ul>
+
+<table>
+  <th>
+  <td>id</td>
+  <td>content</td>
+  </th>
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.id %></td>
+      <td><%= comment.content %></td>
+      <td><%= link_to 'edit', edit_disaster_comment_path(@disaster, comment) %></td>
+      <td><%= button_to "delete", disaster_comment_path(@disaster, comment), method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'new', new_disaster_comment_path(@disaster) %>
+<%= link_to 'Back', disasters_path %>

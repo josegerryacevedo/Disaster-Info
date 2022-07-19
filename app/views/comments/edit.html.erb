@@ -1,0 +1,9 @@
+<h1>Edit Post id: <%= @disaster.id %>, Comment ID:<%= @comment.id %></h1>
+
+<%= form_for @comment, url: disaster_comment_path(@disaster, @comment), method: :patch do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to 'Back', disasters_path %>

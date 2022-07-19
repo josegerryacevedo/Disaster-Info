@@ -1,0 +1,6 @@
+<h1>New comment for Post id<%= @disaster.id %></h1>
+<%= form_for @comment, url: disaster_comments_path(@disaster), method: :post do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
