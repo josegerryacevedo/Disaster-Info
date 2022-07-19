@@ -1,0 +1,10 @@
+<h1>Hi!</h1>
+
+
+<% @disaster_types.each do |disaster_type| %>
+  <ul>
+    <li><%= disaster_type.user.email%></li>
+    <li><%= f.label :Category, disaster_type.category%></li>
+  </ul>
+<% end %>
+
