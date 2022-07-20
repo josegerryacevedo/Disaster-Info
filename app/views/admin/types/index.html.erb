@@ -8,6 +8,7 @@
 
 <%if current_user%>
   <%= link_to 'New Type Of Disaster', new_admin_type_path %>
+  <%= link_to 'Back', disasters_path %>
   <h3><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></h3>
 <% else %>
   <h3><%= link_to 'Sign in', new_user_session_path %></h3>
