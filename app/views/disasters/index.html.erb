@@ -6,7 +6,7 @@
       <li><%=disaster.title%></li>
       <li><%=disaster.content%></li>
       <li><%=disaster.address%></li>
-      <li><%=disaster.type_id%></li>
+      <li><%=disaster.type&.category%></li>
 
       <li><%= link_to 'Edit', edit_disaster_path(disaster) %></li>
       <li><%= link_to "Show", disaster_path(disaster) %></li>
