@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 2022_07_19_072444) do
     t.string "long_url"
     t.string "short_url"
     t.integer "user_id"
+    t.integer "type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["type_id"], name: "index_disasters_on_type_id"
     t.index ["user_id"], name: "index_disasters_on_user_id"
   end
 
