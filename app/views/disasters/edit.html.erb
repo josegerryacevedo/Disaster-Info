@@ -8,6 +8,8 @@
   <%= f.text_field :content %>
   <%= f.label :Address %>
   <%= f.text_field :address %>
+  <%= f.label :Categories %>
+  <%= f.collection_select :type_id, Type.order(:category),:id,:category, include_blank: true %>
   <%= f.submit %>
 <% end %>
 <br>
