@@ -37,7 +37,7 @@ class DisastersController < ApplicationController
   def set_own_disaster
     @disaster = current_user.disasters.find_by_id(params[:id])
     if @disaster.nil?
-      flash[:alert] = 'this post not belongs_to you or not exists'
+      flash[:alert] = 'This post not belongs to you'
       redirect_to disasters_path
     end
   end
