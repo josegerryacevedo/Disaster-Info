@@ -7,6 +7,7 @@ class CreateDisasters < ActiveRecord::Migration[6.1]
       t.string :long_url
       t.string :short_url
       t.belongs_to :user
+      t.belongs_to :type
       t.timestamps
     end
   end
