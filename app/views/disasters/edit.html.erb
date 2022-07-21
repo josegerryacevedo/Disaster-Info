@@ -1,13 +1,14 @@
 <h1>Edit Post id: <%= @disaster.id %></h1>
 
 <%= form_for @disaster, url: disaster_path(@disaster), method: :patch do |f| %>
-  <%= f.label :Title %>
+  <%= f.label :title %>
   <%= f.text_field :title %>
-  <%= f.label :Content %>
+  <%= f.label :content %>
   <%= f.text_field :content %>
-  <%= f.label :Address %>
+  <%= f.label :address %>
   <%= f.text_field :address %>
-  <%= f.label :Categories %>
+  <%= f.label :categories %>
+  <%= f.file_field :image %>
   <%= f.collection_select :type_id, Type.order(:category),:id,:category, include_blank: true %>
   <%= f.submit %>
 <% end %>

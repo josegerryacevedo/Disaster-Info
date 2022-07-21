@@ -5,6 +5,7 @@
   <%= f.text_field :address %>
   <%= f.label :content %>
   <%= f.text_field :content %>
+  <%= f.file_field :images, multiple: true %>
   <%= f.collection_select :type_id, Type.order(:category),:id,:category, {:prompt => 'Type of Disaster'}, include_blank: true %>
   <%= f.submit %>
 <% end %>
