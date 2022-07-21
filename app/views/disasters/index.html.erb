@@ -8,8 +8,7 @@
       <li><%=disaster.address%></li>
       <li><%=disaster.type&.category%></li>
       <li><%=disaster.created_at%></li>
-      <li><%= image_tag "http://localhost:3000/#{disaster.image.url}" if disaster.image? %></li>
-
+      <li><%= image_tag "#{@domain}/#{disaster.image.url}" if disaster.image? %></li>
       <li><%= link_to 'Edit', edit_disaster_path(disaster) %></li>
       <li><%= link_to "Show", disaster_path(disaster) %></li>
       <%= link_to :comments, disaster_comments_path(disaster) %>
