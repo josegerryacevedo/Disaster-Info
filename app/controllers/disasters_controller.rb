@@ -5,6 +5,7 @@ class DisastersController < ApplicationController
 
   def index
     @disasters = Disaster.all.includes(:user)
+    @domain = request.base_url
   end
 
   def new
@@ -48,10 +49,20 @@ class DisastersController < ApplicationController
     end
   end
 
+  def redirect
+    @short_ext = params[:disaster_params]
+    @disaster = Disaster.find_by(disaster_params: @short_ext)
+    if @url.nil?
+      not_found
+    else
+      redirect_to disasters_path
+    end
+  end
+
   private
 
   def disaster_params
-    params.require(:disaster).permit(:title, :content, :address, :image, :type_id)
+    params.require(:disaster).permit(:title, :content, :address, :image, :type_id, :short_url)
   end
 
   def set_disaster
