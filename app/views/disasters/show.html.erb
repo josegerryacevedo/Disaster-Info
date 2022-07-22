@@ -2,6 +2,7 @@
   <li>Title: <%= @disaster.title %></li>
   <li>Content: <%= @disaster.content %></li>
   <li>Content: <%= @disaster.address %></li>
+  <li><%= image_tag "#{request.base_url}/#{@disaster.image.url}" if @disaster.image? %></li>
 </ul>
 
 <%= link_to 'Back', disasters_path %>
