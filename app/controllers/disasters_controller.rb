@@ -35,6 +35,12 @@ class DisastersController < ApplicationController
 
   def show; end
 
+  # def redirect
+  #   @short_num = params[:short]
+  #   @disaster = Disaster.find_by_short_url(@short_num)
+  #   redirect_to disaster_path(@disaster)
+  # end
+
   def set_own_disaster
     @disaster = current_user.disasters.find_by_id(params[:id])
     if @disaster.nil?
@@ -50,12 +56,12 @@ class DisastersController < ApplicationController
   end
 
   def redirect
-    @short_ext = params[:disaster_params]
-    @disaster = Disaster.find_by(disaster_params: @short_ext)
-    if @url.nil?
+    @short_num = params[:short_url]
+    @disaster = Disaster.find_by(short_url: @short_num)
+    if @disaster.nil?
       not_found
     else
-      redirect_to disasters_path
+      redirect_to disaster_path (@disaster)
     end
   end
 

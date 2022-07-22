@@ -8,6 +8,7 @@
       <li><%=disaster.address%></li>
       <li><%=disaster.type&.category%></li>
       <li><%=disaster.created_at%></li>
+      <li><%= link_to "#{@domain}/#{disaster.short_url}", "#{@domain}/#{disaster.short_url}", target: :_self %></li>
       <li><%= image_tag "#{@domain}/#{disaster.image.url}" if disaster.image? %></li>
       <li><%= link_to 'Edit', edit_disaster_path(disaster) %></li>
       <li><%= link_to "Show", disaster_path(disaster) %></li>
