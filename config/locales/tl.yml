@@ -1,0 +1,11 @@
+tl:
+  hello: "Hi, %{name}"
+  disaster_list: Listahan ng mga sakuna
+  user_email: Email
+  title: Titulo
+  content: Nilalaman
+  address: Tirahan
+  category: Uri ng sakuna
+  url: Ikawing
+  image: Imahe
+  actions: Mga aksyon
