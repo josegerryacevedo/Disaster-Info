@@ -1,23 +1,41 @@
 
-<h1>Disaster Information</h1>
+<h1><%= t("disaster_list") %></h1>
+<table class="table text-center">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col"><%= t("user_email") %></th>
+    <th scope="col"><%= t("title") %></th>
+    <th scope="col"><%= t("content") %></th>
+    <th scope="col"><%= t("address") %></th>
+    <th scope="col"><%= t("category") %></th>
+    <th scope="col"><%= t("url") %></th>
+    <th scope="col"><%= t("image") %></th>
+    <th scope="col"><%= t("actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
   <% @disasters.each do |disaster| %>
-    <ul>
-      <li><%=disaster.user.email%></li>
-      <li><%=disaster.title%></li>
-      <li><%=disaster.content%></li>
-      <li><%=disaster.address%></li>
-      <li><%=disaster.type&.category%></li>
-      <li><%=disaster.created_at%></li>
-      <li><%= link_to "#{@domain}/#{disaster.short_url}", "#{@domain}/#{disaster.short_url}", target: :_self %></li>
-      <li><%= image_tag "#{@domain}/#{disaster.image.url}" if disaster.image? %></li>
-      <li><%= link_to 'Edit', edit_disaster_path(disaster) %></li>
-      <li><%= link_to "Show", disaster_path(disaster) %></li>
-      <%= link_to :comments, disaster_comments_path(disaster) %>
+  <tr>
+    <td><%=disaster.user.email%></td>
+    <td><%=disaster.title%></td>
+    <td><%=disaster.content%></td>
+    <td><%=disaster.address%></td>
+    <td><%=disaster.type&.category%></td>
+    <td><%= link_to "#{@domain}/#{disaster.short_url}", "#{@domain}/#{disaster.short_url}", target: :_self %></td>
+    <td><%= image_tag "#{@domain}/#{disaster.image.url}" if disaster.image? %></td>
+    <td>
+      <%= link_to 'Edit', edit_disaster_path(disaster) %>
+      <%= link_to "Show", disaster_path(disaster) %>
+      <%= link_to :Comments, disaster_comments_path(disaster) %>
       <%= form_for disaster, url: disaster_path(disaster), method: :delete do |f| %>
-        <%= f.submit 'delete' %>
+        <%= f.submit 'Delete' %>
       <% end %>
-    </ul>
+    </td>
+  </tr>
   <% end %>
+  </tbody>
+</table>
+
 
 <%if current_user%>
   <%= link_to 'Create', new_disaster_path %>
@@ -25,3 +43,4 @@
 <% else %>
   <h3><%= link_to 'Sign in', new_user_session_path %></h3>
 <% end %>
+

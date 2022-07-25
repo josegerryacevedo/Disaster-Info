@@ -30,4 +30,18 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hi, %{name}"
+  disaster_list: Disaster List
+  user_email: User Email
+  title: Title
+  content: Content
+  address: Address
+  category: Type of Disaster
+  url: URL
+  image: Image
+  actions: Actions
+
+
+
+
+

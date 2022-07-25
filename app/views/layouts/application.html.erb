@@ -10,11 +10,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="container">
+    <p><%= t( "hello", :name => current_user&.email)  if current_user %> </p>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= link_to 'Admin', admin_types_path if current_user&.admin? %>
     <%= yield %>
-
   </body>
 </html>
