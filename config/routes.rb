@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  root :to => "disasters#index"
   resources :disasters do
     resources :comments
   end
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   get '/:short_url' => 'disasters#redirect'
-  root :to => "disasters#index"
+
   get '*path', to: 'disasters#not_found'
 
 end
