@@ -12,6 +12,8 @@
 
   <body class="container">
     <p><%= t( "hello", :name => current_user&.email)  if current_user %> </p>
+    <%= link_to "English", params.permit!.merge(locale: 'en') %>
+    <%= link_to "Tagalog", params.permit!.merge(locale: 'tl') %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= link_to 'Admin', admin_types_path if current_user&.admin? %>
