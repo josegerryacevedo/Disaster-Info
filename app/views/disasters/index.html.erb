@@ -1,16 +1,18 @@
+<%= link_to "English", params.permit!.merge(locale: 'en') %>
+<%= link_to "Tagalog", params.permit!.merge(locale: 'tl') %>
+<h1><%= t('disaster_list') %></h1>
 
-<h1><%= t("disaster_list") %></h1>
 <table class="table text-center">
   <thead class="thead-dark">
   <tr>
-    <th scope="col"><%= t("user_email") %></th>
-    <th scope="col"><%= t("title") %></th>
-    <th scope="col"><%= t("content") %></th>
-    <th scope="col"><%= t("address") %></th>
-    <th scope="col"><%= t("category") %></th>
-    <th scope="col"><%= t("url") %></th>
-    <th scope="col"><%= t("image") %></th>
-    <th scope="col"><%= t("actions") %></th>
+    <th scope="col"><%= User.human_attribute_name(:email) %></th>
+    <th scope="col"><%= Disaster.human_attribute_name(:title) %></th>
+    <th scope="col"><%= Disaster.human_attribute_name(:content) %></th>
+    <th scope="col"><%= Disaster.human_attribute_name(:address) %></th>
+    <th scope="col"><%= Disaster.human_attribute_name(:category) %></th>
+    <th scope="col"><%= Disaster.human_attribute_name(:short_url) %></th>
+    <th scope="col"><%= Disaster.human_attribute_name(:image) %></th>
+    <th scope="col"><%= t('common.actions') %></th>
   </tr>
   </thead>
   <tbody>

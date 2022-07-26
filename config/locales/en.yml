@@ -32,14 +32,8 @@
 en:
   hello: "Hi, %{name}"
   disaster_list: Disaster List
-  user_email: User Email
-  title: Title
-  content: Content
-  address: Address
-  category: Type of Disaster
-  url: URL
-  image: Image
-  actions: Actions
+
+
 
 
 

@@ -1,0 +1,16 @@
+tl:
+  models:
+    disaster:
+      one: Sakuna
+      other: Mga sakuna
+  activerecord:
+    attributes:
+      disaster:
+        title: Titulo
+        content: Nilalaman
+        address: Lugar
+        image: Imahe
+        category: Uri ng sakuna
+        short_url: URL
+      user:
+        email: May akda

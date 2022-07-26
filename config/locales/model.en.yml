@@ -1,0 +1,15 @@
+en:
+  models:
+    disaster:
+      one: Disaster
+      other: Disasters
+  activerecord:
+    attributes:
+      disaster:
+        title: Title
+        content: Content
+        address: Address
+        type: Type of Disaster
+        image: Image
+        category: Category
+        short_url: URL
